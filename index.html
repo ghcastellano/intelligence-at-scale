@@ -127,6 +127,25 @@ section{position:relative;z-index:1;padding:8rem 2.5rem;max-width:1400px;margin:
 .marr{color:var(--t3);font-size:1.5rem;flex-shrink:0}
 .sdiv{width:100%;max-width:1400px;margin:0 auto;padding:0 2.5rem;position:relative;z-index:1}
 .sdiv hr{border:none;border-top:1px solid var(--bdr)}
+.va{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
+.vac{background:var(--s1);border:1px solid var(--bdr);border-radius:16px;padding:2rem;position:relative;overflow:hidden}
+.vac.green{border-left:3px solid #22C55E}.vac.yellow{border-left:3px solid #EAB308}.vac.red{border-left:3px solid #EF4444}
+.vab{display:inline-block;font-size:.6rem;font-family:'JetBrains Mono',monospace;padding:.2rem .6rem;border-radius:100px;font-weight:600;margin-bottom:.8rem}
+.vab.prod{background:rgba(34,197,94,0.15);color:#22C55E}.vab.mat{background:rgba(234,179,8,0.15);color:#EAB308}.vab.early{background:rgba(239,68,68,0.15);color:#EF4444}
+.vac h4{font-size:.95rem;font-weight:600;margin-bottom:.5rem}.vac p{font-size:.8rem;color:var(--t2);line-height:1.55}
+.mig{display:grid;grid-template-columns:1fr;gap:0;margin-top:2.5rem;position:relative}
+.mig::before{content:'';position:absolute;left:24px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--cyan),var(--teal),var(--violet))}
+.ms{display:flex;gap:1.5rem;padding:1.5rem 0;position:relative}
+.md{width:48px;height:48px;border-radius:50%;background:var(--s1);border:2px solid var(--cyan);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--cyan);font-weight:600;flex-shrink:0;position:relative;z-index:1}
+.mc{flex:1;background:var(--s1);border:1px solid var(--bdr);border-radius:14px;padding:1.5rem 2rem}
+.mc h4{font-size:.95rem;font-weight:600;margin-bottom:.3rem}
+.mc .mlab{font-size:.65rem;font-family:'JetBrains Mono',monospace;color:var(--teal);letter-spacing:.1em;margin-bottom:.8rem}
+.mc p{font-size:.8rem;color:var(--t2);line-height:1.55;margin-bottom:.4rem}
+.rg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem}
+.rc{background:var(--s1);border:1px solid var(--bdr);border-radius:14px;padding:1.8rem}
+.rc h4{font-size:.9rem;font-weight:600;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
+.rc p{font-size:.78rem;color:var(--t2);line-height:1.55}
+.rc .rl{color:var(--rose);font-weight:600;font-size:.75rem;margin-top:.6rem}
 .horb{position:absolute;right:-100px;top:50%;transform:translateY(-50%);width:500px;height:500px;opacity:.12;pointer-events:none}
 .orb{position:absolute;border:1px solid var(--cyan);border-radius:50%;animation:spin 30s linear infinite}
 .orb:nth-child(1){width:300px;height:300px;top:100px;left:100px}
@@ -138,15 +157,15 @@ footer p{color:var(--t3);font-size:.8rem}
 .fbrand{font-weight:700;font-size:1rem;color:var(--t2);margin-bottom:.5rem}
 .rev{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.16,1,.3,1)}
 .rev.vis{opacity:1;transform:translateY(0)}
-@media(max-width:1024px){.pgrid,.dgrid{grid-template-columns:repeat(2,1fr)}.gflow{grid-template-columns:repeat(2,1fr)}.gs::after{display:none}.cgrid{grid-template-columns:1fr}.tl{grid-template-columns:1fr}}
-@media(max-width:768px){section{padding:5rem 1.5rem}.pgrid,.dgrid,.gflow,.dfgrid{grid-template-columns:1fr}nav ul{display:none}}
+@media(max-width:1024px){.pgrid,.dgrid{grid-template-columns:repeat(2,1fr)}.gflow{grid-template-columns:repeat(2,1fr)}.gs::after{display:none}.cgrid{grid-template-columns:1fr}.tl{grid-template-columns:1fr}.va{grid-template-columns:1fr}.rg{grid-template-columns:1fr}}
+@media(max-width:768px){section{padding:5rem 1.5rem}.pgrid,.dgrid,.gflow,.dfgrid{grid-template-columns:1fr}nav ul{display:none}.va{grid-template-columns:1fr}.rg{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="gbg"></div>
 <nav>
   <div class="logo">NTT DATA <span>/ Intelligence at Scale</span></div>
-  <ul><li><a href="#current">Current</a></li><li><a href="#evolution">Evolution</a></li><li><a href="#offering">Offering</a></li><li><a href="#tech">Tech</a></li><li><a href="#poc">PoCs</a></li><li><a href="#gtm">GTM</a></li></ul>
+  <ul><li><a href="#current">Current</a></li><li><a href="#evolution">Evolution</a></li><li><a href="#offering">Offering</a></li><li><a href="#tech">Tech</a></li><li><a href="#poc">PoCs</a></li><li><a href="#migration">Migration</a></li><li><a href="#gtm">GTM</a></li></ul>
   <span class="tag">IBIOL · DSA & DNA</span>
 </nav>
 
@@ -200,9 +219,9 @@ footer p{color:var(--t3);font-size:.8rem}
     <div class="sc"><div class="sn">15%</div><div class="sl">"AI Leaders" (NTT DATA Report)</div></div>
   </div>
   <div class="mrow rev">
-    <div class="mph"><h5>Phase 1 · H1 2026</h5><p>AI Governance + Data Platform Modernization + First Agentic PoCs</p></div>
+    <div class="mph"><h5>Phase 1 · 1º Semestre 2026</h5><p>AI Governance + Data Platform Modernization + First Agentic PoCs</p></div>
     <div class="marr">→</div>
-    <div class="mph"><h5>Phase 2 · H2 2026</h5><p>AI Factory setup + GenAI industrialization + Decision Intelligence pilots</p></div>
+    <div class="mph"><h5>Phase 2 · 2º Semestre 2026</h5><p>AI Factory setup + GenAI industrialization + Decision Intelligence pilots</p></div>
     <div class="marr">→</div>
     <div class="mph"><h5>Phase 3 · 2027</h5><p>Autonomous Analytics at scale + Closed-loop systems + AI-native operations</p></div>
   </div>
@@ -276,19 +295,73 @@ footer p{color:var(--t3);font-size:.8rem}
 
 <div class="sdiv"><hr></div>
 
+<section id="migration">
+  <div class="rev"><div class="stag">07 · Viability & Migration Roadmap</div><h2 class="stitle">Is This <em>Viable</em>? What Must We Do?</h2><p class="sdesc">A realistic assessment of each technology's production-readiness and the concrete steps required to migrate from Track 1 (current) to Track 2 (Autonomous Intelligence).</p></div>
+
+  <div class="rev" style="margin-top:3rem"><h3 style="font-family:'Instrument Serif',serif;font-size:1.6rem;margin-bottom:.5rem">Technology Readiness Assessment</h3><p style="color:var(--t2);font-size:.9rem;max-width:700px">Each technology rated for enterprise production-readiness as of early 2026.</p></div>
+
+  <div class="va rev">
+    <div class="vac green"><span class="vab prod">PRODUCTION-READY</span><h4>LangGraph (LangChain)</h4><p>The definitive choice for enterprise agentic workflows in 2026. Graph-based state machines give full control, debuggability, and compliance auditability. Used in FinTech, Healthcare, and Logistics at scale. Steeper learning curve but most predictable in production.</p></div>
+    <div class="vac green"><span class="vab prod">PRODUCTION-READY</span><h4>CrewAI</h4><p>Fastest time-to-prototype with role-based agent teams. Incubated by AI Fund (Andrew Ng). Great for PoCs and role-based workflows. Production add-ons needed for observability, cost caps, and loop detection.</p></div>
+    <div class="vac green"><span class="vab prod">PRODUCTION-READY</span><h4>Databricks Lakehouse + Unity Catalog</h4><p>Mature platform unifying data warehousing, lakes, and ML. Delta Lake for ACID transactions, Unity Catalog for governance. Global lakehouse market growing at 25% CAGR to $105.9B by 2034. Best for ML-heavy workloads.</p></div>
+    <div class="vac green"><span class="vab prod">PRODUCTION-READY</span><h4>Snowflake + Cortex AI</h4><p>Cloud-native warehouse with built-in LLMs (Cortex AI). Near-zero maintenance, instant scaling, Snowpark for Python/Scala. dbt core now embedded natively. Best for SQL-centric analytics and data sharing.</p></div>
+    <div class="vac green"><span class="vab prod">PRODUCTION-READY</span><h4>Azure OpenAI / Vertex AI / Bedrock</h4><p>All three hyperscaler AI platforms are enterprise-grade with SOC 2, HIPAA, regional compliance. Azure OpenAI leads in Microsoft-centric enterprises. Vertex AI strong in multimodal. Bedrock offers multi-model flexibility.</p></div>
+    <div class="vac green"><span class="vab prod">PRODUCTION-READY</span><h4>dbt + Apache Airflow + Kafka</h4><p>dbt is the standard for analytics engineering (SQL transformations as code). Airflow is the default batch orchestrator. Kafka handles millions of events/sec. All battle-tested at massive scale globally.</p></div>
+    <div class="vac yellow"><span class="vab mat">MATURING — NEEDS GUARDRAILS</span><h4>Microsoft AutoGen</h4><p>Conversational multi-agent framework from Microsoft Research. Strong Azure integration and human-in-the-loop. But conversation-based approach is less predictable — needs timeouts, turn limits, and budget caps. No hard token cap by default.</p></div>
+    <div class="vac yellow"><span class="vab mat">MATURING — NEEDS GUARDRAILS</span><h4>EU AI Act Compliance Tooling</h4><p>The regulation is real (August 2026 enforcement for high-risk systems, up to €35M or 7% turnover fines). But harmonized technical standards are still being finalized. Over 50% of orgs lack AI inventories. Governance platform market projected at $492M in 2026.</p></div>
+    <div class="vac green"><span class="vab prod">PRODUCTION-READY</span><h4>Power BI + Copilot / Tableau</h4><p>Power BI Copilot is GA for Microsoft 365 enterprise. NL-to-DAX queries, auto-visualizations, narrative summaries. Best results with well-governed semantic models. Tableau GPT/Einstein also production-ready.</p></div>
+    <div class="vac yellow"><span class="vab mat">EMERGING STANDARD</span><h4>MCP Protocol (Model Context Protocol)</h4><p>Universal protocol for AI agent-to-tool connectivity ("USB-C for AI"). Originally from Anthropic, now widely adopted. Rapidly becoming the standard but integration ecosystem still growing. Early bet with high upside.</p></div>
+  </div>
+
+  <div class="rev" style="margin-top:5rem"><h3 style="font-family:'Instrument Serif',serif;font-size:1.6rem;margin-bottom:.5rem">Migration Roadmap: Track 1 → Track 2</h3><p style="color:var(--t2);font-size:.9rem;max-width:700px">The concrete steps to evolve from our current offering to Autonomous Intelligence. Not a rip-and-replace — an additive evolution.</p></div>
+
+  <div class="mig rev">
+    <div class="ms"><div class="md">M0</div><div class="mc"><div class="mlab">MONTH 0-1 · IMMEDIATE</div><h4>Internal Skills Assessment & Gap Analysis</h4><p><strong>What:</strong> Audit current team skills in Python, ML, cloud platforms. Map everyone to Track 1 vs Track 2 readiness.</p><p><strong>Gap:</strong> Most Track 1 teams know RPA/BPMN but not LangGraph, dbt, or GenAI prompting. Expect 60-70% of staff needing upskilling.</p><p><strong>Action:</strong> Launch Databricks Academy, LangChain/LangGraph certification paths, Azure AI Fundamentals for all D&A staff. Partner with hyperscaler training programs (free enterprise credits available).</p></div></div>
+
+    <div class="ms"><div class="md">M1</div><div class="mc"><div class="mlab">MONTH 1-2 · FOUNDATION</div><h4>Data Platform Modernization Blueprint</h4><p><strong>What:</strong> Assess current client data estates (on-prem DW, SSIS, Informatica, basic ETL). Design target architecture per client.</p><p><strong>Gap:</strong> Migrating from on-prem DWs to Databricks/Snowflake takes 3-12 months depending on complexity. 60% of engineers use undocumented stored procedures (shadow IT). Automated dependency mapping finds 40% more dependencies than manual audits.</p><p><strong>Action:</strong> Build reusable migration accelerators: SQL-to-Spark converters, schema discovery tools, parallel-run validation frameworks. Use dbt for transformation-as-code from day one.</p></div></div>
+
+    <div class="ms"><div class="md">M2</div><div class="mc"><div class="mlab">MONTH 2-3 · BUILD</div><h4>AI Factory Infrastructure Setup</h4><p><strong>What:</strong> Stand up centralized GenAI infrastructure: model registry, RAG pipeline templates, prompt management, evaluation frameworks.</p><p><strong>Gap:</strong> Currently each project builds custom ML pipelines. No centralized model registry or prompt versioning. No FinOps monitoring for token spend.</p><p><strong>Action:</strong> Deploy MLflow/Weights&Biases for model lifecycle. Set up RAG pipelines with vector databases (pgvector for cost-efficiency, Pinecone/Weaviate for scale). Implement FinOps dashboards for token budget tracking per team/project.</p></div></div>
+
+    <div class="ms"><div class="md">M3</div><div class="mc"><div class="mlab">MONTH 3-4 · AGENTIC</div><h4>First Agentic AI PoCs (Client Zero)</h4><p><strong>What:</strong> Build and test agentic workflows internally before any client deployment.</p><p><strong>Gap:</strong> No internal experience with multi-agent systems. Need to learn framework selection (LangGraph for control, CrewAI for speed), agent observability, and failure modes.</p><p><strong>Action:</strong> Deploy 3 internal agentic use cases: (1) Automated financial reconciliation, (2) Internal knowledge copilot, (3) Automated report generation. Use LangGraph for complex workflows, CrewAI for role-based tasks. Measure: latency, accuracy, cost-per-run, failure rate.</p></div></div>
+
+    <div class="ms"><div class="md">M4</div><div class="mc"><div class="mlab">MONTH 4-5 · GOVERNANCE</div><h4>Responsible AI Framework & EU AI Act Prep</h4><p><strong>What:</strong> Build compliance infrastructure before August 2026 enforcement deadline.</p><p><strong>Gap:</strong> Most enterprises (50%+) lack basic AI system inventories. High-risk AI systems (hiring, credit, law enforcement) require conformity assessments, risk management, human oversight, and data governance. Non-compliance: up to €35M or 7% global turnover.</p><p><strong>Action:</strong> Create AI inventory templates, risk classification tools, documentation generators. Pre-build Model Cards, bias detection pipelines, and explainability layers. Position as compliance-as-a-service for IBIOL clients.</p></div></div>
+
+    <div class="ms"><div class="md">M5</div><div class="mc"><div class="mlab">MONTH 5-6 · LAUNCH</div><h4>First Client Engagements on Track 2</h4><p><strong>What:</strong> Deploy 4-week Rapid PoCs with select existing clients. Cross-sell from Track 1 relationships.</p><p><strong>Gap:</strong> Sales team knows Hyperautomation pitch, not AI transformation pitch. Need new client materials, demo environments, and technical pre-sales capability.</p><p><strong>Action:</strong> Train 10 senior consultants as "AI Transformation Leads." Create 6 demo environments (one per PoC template). Launch with top 5 existing clients in Banking, Insurance, and Telco (highest urgency for EU AI Act + AI modernization).</p></div></div>
+
+    <div class="ms"><div class="md">M6+</div><div class="mc"><div class="mlab">MONTH 6-12 · SCALE</div><h4>Industrialize & Scale Across IBIOL</h4><p><strong>What:</strong> Convert PoC successes into multi-year engagements. Build repeatable delivery patterns.</p><p><strong>Gap:</strong> Scaling from PoC to production requires productized accelerators, not ad-hoc consulting.</p><p><strong>Action:</strong> Publish sector-specific AI transformation playbooks. Build IP-protected accelerators for each pillar. Establish Centers of Excellence per geography. Target: Track 2 as primary revenue driver by end of 2027.</p></div></div>
+  </div>
+
+  <div class="rev" style="margin-top:5rem"><h3 style="font-family:'Instrument Serif',serif;font-size:1.6rem;margin-bottom:.5rem">Key Risks & Mitigations</h3></div>
+  <div class="rg rev">
+    <div class="rc"><h4>⚡ Skills Gap</h4><p>60-70% of current D&A staff need upskilling on GenAI, modern data platforms, and agentic frameworks. Without investment, we cannot deliver Track 2.</p><p class="rl">Mitigation: Mandatory certification paths + hiring 15-20 senior specialists in LangGraph, dbt, MLOps.</p></div>
+    <div class="rc"><h4>🕐 EU AI Act Timeline</h4><p>August 2026 enforcement may shift to Dec 2027 via Digital Omnibus, but this is conditional. Prudent planning treats Aug 2026 as binding.</p><p class="rl">Mitigation: Position compliance readiness as a client offering, not a blocker. Revenue opportunity disguised as risk.</p></div>
+    <div class="rc"><h4>💸 Framework Volatility</h4><p>Agentic AI frameworks evolve rapidly. Today's leader (LangGraph) may be displaced. CrewAI and AutoGen iterate monthly.</p><p class="rl">Mitigation: Framework-agnostic architecture with MCP Protocol. Swap frameworks without rewriting business logic.</p></div>
+    <div class="rc"><h4>🏗️ Client Data Maturity</h4><p>Many IBIOL clients still have fragmented data estates, poor governance, and shadow IT. They aren't ready for AI-native analytics.</p><p class="rl">Mitigation: Data Platform Modernization (Pillar 2) as mandatory prerequisite. Start with data readiness assessments.</p></div>
+    <div class="rc"><h4>🔄 Change Management</h4><p>Track 2 requires cultural shift: from project-based delivery to platform thinking, from dashboards to autonomous systems.</p><p class="rl">Mitigation: Two-track model preserves Track 1 revenue while building Track 2 capability. No big-bang disruption.</p></div>
+    <div class="rc"><h4>💰 Investment Required</h4><p>AI Factory infra, training, hiring, demo environments, compliance tooling — requires upfront investment before revenue.</p><p class="rl">Mitigation: Phased approach. PoC templates generate early revenue. Hyperscaler credits offset infra costs. Target 6-month payback on initial investment.</p></div>
+  </div>
+
+  <div class="vcall rev" style="margin-top:4rem">
+    <blockquote>"The technologies are production-ready. The frameworks are mature. The regulatory clock is ticking. The question is not <em>if</em> we migrate — it's <em>how fast</em> we build the capability to deliver it."</blockquote>
+    <cite>— Assessment based on 2026 market research: ISG, Gartner, IDC, NTT DATA Global AI Report</cite>
+  </div>
+</section>
+
+<div class="sdiv"><hr></div>
+
 <section id="gtm">
-  <div class="rev"><div class="stag">07 · Go-to-Market Strategy</div><h2 class="stitle">How We <em>Win</em> Clients</h2><p class="sdesc">Four-phase model to convert existing relationships into new revenue and attract new clients with demonstrable value.</p></div>
+  <div class="rev"><div class="stag">08 · Go-to-Market Strategy</div><h2 class="stitle">How We <em>Win</em> Clients</h2><p class="sdesc">Four-phase model to convert existing relationships into new revenue and attract new clients with demonstrable value.</p></div>
   <div class="gflow rev">
     <div class="gs"><div class="gn">PHASE 01</div><h4>Insight-Led Outreach</h4><p>Proactive AI maturity assessments and benchmark reports for existing clients. Thought leadership positioning.</p></div>
     <div class="gs"><div class="gn">PHASE 02</div><h4>Rapid PoC (4 Weeks)</h4><p>Pre-built PoC template tailored to sector. Measurable results that de-risk the buying decision.</p></div>
     <div class="gs"><div class="gn">PHASE 03</div><h4>Value Expansion</h4><p>Convert PoC to full engagement. One use case → enterprise AI strategy across multiple BUs.</p></div>
     <div class="gs"><div class="gn">PHASE 04</div><h4>Strategic Partnership</h4><p>NTT DATA as AI transformation partner. Multi-year managed services + continuous innovation.</p></div>
   </div>
-  <div class="rev" style="margin-top:5rem"><div class="stag">08 · Why NTT DATA</div><h2 class="stitle">Our <em>Competitive Edge</em></h2></div>
+  <div class="rev" style="margin-top:5rem"><div class="stag">09 · Why NTT DATA</div><h2 class="stitle">Our <em>Competitive Edge</em></h2></div>
   <div class="dfgrid rev">
-    <div class="dfc"><div class="dfn">01</div><div><h4>ISG Leader in Agentic AI & GenAI Services</h4><p>Leader by ISG Provider Lens® in both Agentic AI and GenAI Services — two consecutive years. Independently validated.</p></div></div>
+    <div class="dfc"><div class="dfn">01</div><div><h4>ISG Leader in Agentic AI & GenAI Services</h4><p>Recognized by ISG Provider Lens® as Leader in Agentic AI and GenAI Services. Independently validated.</p></div></div>
     <div class="dfc"><div class="dfn">02</div><div><h4>Smart AI Agent™ Ecosystem</h4><p>Proprietary full-stack ecosystem: infrastructure, orchestration, development, observability. Battle-tested via Client Zero approach.</p></div></div>
-    <div class="dfc"><div class="dfn">03</div><div><h4>Global Scale, Local Expertise</h4><p>10,000+ D&A professionals across 35+ countries with deep sectoral knowledge in IBIOL markets.</p></div></div>
+    <div class="dfc"><div class="dfn">03</div><div><h4>Global Scale, Local Expertise</h4><p>Part of a $30B+ organization with ~200,000 employees across 70+ countries. Deep sectoral knowledge in IBIOL markets.</p></div></div>
     <div class="dfc"><div class="dfn">04</div><div><h4>Hyperscaler Alliances</h4><p>Strategic partnerships with Google Cloud, Microsoft Azure, and AWS. Joint go-to-market across all three platforms.</p></div></div>
   </div>
 </section>
